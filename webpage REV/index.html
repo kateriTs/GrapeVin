@@ -1,0 +1,120 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>GrapeVin</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <section id="section1">
+            <div class="section1">
+                <div class="navbar">
+                    <div class="logo">
+                        <h1>GrapeVin</h1>
+                    </div>
+                    <ul>
+                        <li><a href="#section1">Home</a></li>
+                        <li><a href="#section2">About</a></li>
+                        <li><a href="#section3">Contact</a></li>
+                        <li><a href="#">Quiz</a></li>
+                    </ul>
+                </div>
+                <div class="content">
+                    <h1>Welcome to GrapeVin</h1><br><br>
+                    <h3>Find the perfect wine for your character and your every moment</h3>
+                </div>
+                <div class="card" id="card">
+                    <div class="card-front" id="card-front">
+                        <h3>LOGIN</h3><br>
+                        <form>
+                            <input type="email" class="input-box" placeholder="your email Id" required>
+                            <input type="password" class="input-box" placeholder="your password" required>
+                            <button type="button"><span></span>Login</button>
+                        </form>
+                        <div class="register-link">
+                            <p>Do not have an account?</p>
+                            <button type="button" onclick="openRegister()"><span></span>Register</button>
+                        </div>
+                    </div>
+                    <div class="card-back" id="card-back">
+                        <h3>REGISTER</h3><br>
+                        <form>
+                            <input type="name" class="input-box" placeholder="your name" required>
+                            <input type="email" class="input-box" placeholder="your email Id" required>
+                            <input type="password" class="input-box" placeholder="your password" required>
+                            <button type="button"><span></span>Register</button>
+                        </form>
+                        <div class="login-link">
+                            <p>You have an account?</p>
+                            <button type="button" onclick="openLogin()"><span></span>Login</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="section2">
+            <div class="section2">
+                <div class="navbar">
+                    <div class="logo">
+                        <h1>GrapeVin</h1>
+                    </div>
+                    <ul>
+                        <li><a href="#section1">Home</a></li>
+                        <li><a href="#section2">About</a></li>
+                        <li><a href="#section3">Contact</a></li>
+                        <li><a href="#">Quiz</a></li>
+                    </ul>
+                </div>
+                <div class="about-content">
+                    <h1>About GrapeVin</h1><br><br>
+                    <h3>We are a group of students, dedicated to wellbeing and fascinated with the wine production procedure</h3>
+                </div>
+        </section>
+        <section id="section3">
+            <div class="section3">
+                <div class="navbar">
+                    <div class="logo">
+                        <h1>GrapeVin</h1>
+                    </div>
+                    <ul>
+                        <li><a href="#section1">Home</a></li>
+                        <li><a href="#section2">About</a></li>
+                        <li><a href="#section3">Contact</a></li>
+                        <li><a href="#">Quiz</a></li>
+                    </ul>
+                </div>
+                <div class="contact-content">
+                    <h1>Contact Us</h1><br><br>
+                    <h3>Feel free to contact us with any question or suggestion.
+                        <br></br>
+                        <p>We will be happy to reply.</p>
+                    </h3>
+                    <div class="form">
+                        <div class="input-data">
+                            <input type="text" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="input-data">
+                            <input type="text" id="number" placeholder="Phone No." required>
+                        </div>
+                        <div class="input-data">
+                            <input type="text" id="email" placeholder="Your email" required>
+                        </div>
+                        <div class="input-data">
+                            <textarea id="message" rows="7" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit"><span></span>Send</button>
+                    </div>    
+                </div>
+        </section>
+    </body>
+
+    <script>
+        var card=document.getElementById("card")
+        function openRegister(){
+            card.style.transform="rotateY(180deg)";
+        }
+        function openLogin(){
+            card.style.transform="rotateY(0deg)";
+        }
+    </script>
+</html>
