@@ -83,12 +83,4 @@ public class Questionnaire {
 
         return userResponses;
     }
-
-    public static void main(String[] args) {
-        Questionnaire questionnaire = new Questionnaire();
-        List<String> userResponses = questionnaire.collectUserResponses();
-
-        // Print user responses (you can modify this part based on your needs)
-        System.out.println("User Responses: " + userResponses);
-    }
 }
