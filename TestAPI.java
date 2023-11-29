@@ -54,8 +54,8 @@ public class TestAPI {
         return parseGptResponse(result.toString());
     }
 
-      private static ArrayList<String> parseGptResponse(String gptResponse) {
-        // Parse the JSON response to extract the recommended wines
+    // Parse the JSON response to extract the recommended wines
+    private static ArrayList<String> parseGptResponse(String gptResponse) {
         ArrayList<String> recommendedWines = new ArrayList<>();
 
         // Extract the assistant's content from the JSON response
