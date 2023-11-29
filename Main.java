@@ -12,7 +12,7 @@ public class Main {
             String request = "Find 5 brands of wines that are: " + userResponses.get(1) + "and " + userResponses.get(3)
                  + ". Please display them strictly like this: name - color and flavor";
            
-            // Print user responses (you can modify this part based on your needs)
+            // Print user responses
             System.out.println("User Responses: " + userResponses);
            
             // Use GPT-3.5 to analyze responses and get wine recommendations
