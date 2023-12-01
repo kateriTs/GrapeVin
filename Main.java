@@ -5,11 +5,10 @@ import gf.TestAPI;
 
 public class Main {
 
-        public static void main(String[] args) {
-            TestAPI.setApiKey("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");         
+        public static void main(String[] args) {         
             Questionnaire questionnaire = new Questionnaire();
             List<String> userResponses = questionnaire.collectUserResponses();
-            String request = "Find 5 brands of wines that are: " + userResponses.get(1) + "and " + userResponses.get(3)
+            String request = "Find 5 brands of wine that are: " + userResponses.get(1) + "and " + userResponses.get(3)
                  + ". Please display them strictly like this: name - color and flavor";
            
             // Print user responses
@@ -26,4 +25,4 @@ public class Main {
                 e.printStackTrace();
             }
         } 
-    }
+}
