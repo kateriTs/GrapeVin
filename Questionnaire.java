@@ -36,7 +36,7 @@ public class Questionnaire {
         choices.put("Which meal do you prefer?", List.of("Chicken", "Red meat", "A plate of cheeses"));
         choices.put("Which flavor do you mostly prefer?", List.of("Fruity", "Dry", "Very sweet"));
         choices.put("In which occasions do you enjoy wine the most?", List.of("During meals", "Social gatherings", "During relaxation"));
-        choices.put("Do you prefer red, white, or rosé wines?", List.of("Red", "White", "Rosé"));
+        choices.put("Do you prefer red, white, or rose wines?", List.of("Red", "White", "Rose"));
         choices.put("What is your favorite wine experience?", List.of("Summer vacations", "Social evening", "Other"));
         // Add more choices as needed
     }
@@ -68,10 +68,10 @@ public class Questionnaire {
     public List<String> collectUserResponses() {
         Scanner scanner = new Scanner(System.in);
         List<String> userResponses = new ArrayList<>();
-
+        List<String> options = new ArrayList<>();
         for (String question : questions) {
             System.out.println(question);
-            List<String> options = choices.get(question);
+            options = choices.get(question);
             for (int i = 0; i < options.size(); i++) {
                 System.out.println((i + 1) + ". " + options.get(i));
             }
