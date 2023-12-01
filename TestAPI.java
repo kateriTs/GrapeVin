@@ -11,11 +11,7 @@ import java.util.ArrayList;
 
 public class TestAPI {
     private static String API_ENDPOINT = "https://api.openai.com/v1/chat/completions";
-    private static String apiKey;
-
-    public static void setApiKey(String apiKey) {
-        TestAPI.apiKey = apiKey;
-    }
+    private static String apiKey = "OUR_API_KEY";
 
     public String getApiKey(){
         return apiKey;
@@ -53,7 +49,7 @@ public class TestAPI {
 
         return parseGptResponse(result.toString());
     }
-
+    
     // Parse the JSON response to extract the recommended wines
     private static ArrayList<String> parseGptResponse(String gptResponse) {
         ArrayList<String> recommendedWines = new ArrayList<>();
@@ -72,4 +68,5 @@ public class TestAPI {
         return recommendedWines;
     }
 }
+
 
