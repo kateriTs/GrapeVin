@@ -67,6 +67,18 @@ public class TestAPI {
 
         return recommendedWines;
     }
+
+      public void saveResponses (ArrayList<String> wines) {
+        for (String wine : wines) {
+            if (wine.contains("red")){
+                //put string line in DB to red wines table
+            } else if (wine.contains("rose")){
+                //put string line in DB to rose wines table
+            } else if (wine.contains("white")){
+                //put string line in DB to white wines table
+            }
+        }
+    }
 }
 
 
