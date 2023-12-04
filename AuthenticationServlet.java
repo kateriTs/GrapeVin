@@ -52,17 +52,19 @@ public class UserAuthenticationServlet extends HttpServlet {
 
     private void handleWineSuggestions(HttpServletRequest request, HttpServletResponse response) throws IOException {
         //!!! Σοφία και εδώ !!!!
-        String apiEndpoint = "https://api.example.com/suggest-wines";
+        //String API_ENDPOINT = "https://api.openai.com/v1/chat/completions";
+        //TestAPI.getApiEndPoint(); Δεν χρειαζεται εδω γιατι υπαρχει στην κλαση TestAPI
 
         // Assuming you have user preferences stored in request parameters
         String userEmail = request.getParameter("email");
         // ... other parameters ...
 
         // Σοφία και εδω !!!
-        String suggestedWines = callExternalApi(apiEndpoint, userEmail /* other parameters */);
+        String suggestedWines = TestAPI.getWineRecommendations(request);
 
         // Ναταλία και εδω !!!
-        saveSuggestedWinesToDatabase(userEmail, suggestedWines);
+        //saveSuggestedWinesToDatabase(userEmail, suggestedWines);
+        TestAPI.saveResponses(suggestedWines);
 
         // Send response to the client
         PrintWriter out = response.getWriter();
@@ -70,13 +72,11 @@ public class UserAuthenticationServlet extends HttpServlet {
         out.println("<p>" + suggestedWines + "</p>");
     }
 
-    private String callExternalApi(String apiEndpoint, String userEmail /* other parameters */) {
-        // Σοφία εδώ πρέπει να κοιτάξεις πώς θα το γράψεις 
-        
-    }
+   /* private String callExternalApi(String apiEndpoint, String userEmail /* other parameters */) {
+        // Σοφία εδώ πρέπει να κοιτάξεις πώς θα το γράψεις } */ //υπαρχει ηδη η static μεθοδος getWineRecommendations(request) στην κλαση TestAPI
 
-    private void saveSuggestedWinesToDatabase(String userEmail, String suggestedWines) {
+    /* private void saveSuggestedWinesToDatabase(String userEmail, String suggestedWines) {
         // Ναταλία διαμορφώνετε ανάλογα με αυτό που θα φτιάξετε τα απο πάνω μπορούν να αλλάξουν όλα αναλογως με αυτό που θα φτιάξετε 
         
-    }
+    }*/ //υπαρχει ηδη η μεθοδος saveResponses(wines) στην κλάση ΤestAPI
 }
