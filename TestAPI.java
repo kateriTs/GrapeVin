@@ -76,6 +76,8 @@ public class TestAPI {
                 //put string line in DB to rose wines table
             } else if (wine.contains("white")){
                 //put string line in DB to white wines table
+            } else {
+                System.out.println("Unknown Wine Category");
             }
         }
     }
