@@ -61,12 +61,17 @@ public class TestAPI {
         // Extract the assistant's content from the JSON response
         String content = gptResponse.split("\"content\": \"")[1].split("\"")[0];
 
+        // Check response stracture and get only the wine names
+        if (content.contains(":")) {
+            content = content.split(":")[1];
+        }
+
         // Split the content into lines
         String[] lines = content.split("\\\\n");
 
         // Add each line to the ArrayList
         for (String line : lines) {
-            recommendedWines.add(line.trim());
+            recommendedWines.add(line.replaceAll("[0-9.]", "").trim());
         }
 
         return recommendedWines;
