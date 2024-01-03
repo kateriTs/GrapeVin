@@ -35,9 +35,9 @@ public class Questionnaire {
     private void initializeChoices() {
         choices.put("Which meal do you prefer?", List.of("Chicken", "Red meat", "A plate of cheeses"));
         choices.put("Which flavor do you mostly prefer?", List.of("Fruity", "Dry", "Very sweet"));
-        choices.put("In which occasions do you enjoy wine the most?", List.of("During meals", "Social gatherings", "During relaxation"));
+        choices.put("In which occasions do you enjoy wine the most?", List.of("During meals", "During social gatherings", "During relaxation"));
         choices.put("Do you prefer red, white, or rosé wines?", List.of("Red", "White", "Rosé"));
-        choices.put("What is your favorite wine experience?", List.of("Summer vacations", "Social evening", "Other"));
+        choices.put("What is your favorite wine experience?", List.of("Summer vacations", "Social evening", "Romantic"));
         // Add more choices as needed
     }
 
