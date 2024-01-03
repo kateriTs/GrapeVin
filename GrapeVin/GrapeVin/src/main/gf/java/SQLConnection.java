@@ -10,7 +10,7 @@ public class SQLConnection {
         Connection connection = null;
         try {
             String url = "jdbc:mysql://localhost:3306/winedb?user=root&password=Foolcavetown201:3306/winedb";
-            String username = "root";
+            String username = "putyourusername";
             String password = "putyourpassword";
             connection = DriverManager.getConnection(url, username, password);
             System.out.println("Connected to the database!");
