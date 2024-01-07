@@ -71,7 +71,10 @@ public class TestAPI {
 
         // Add each line to the ArrayList
         for (String line : lines) {
-            recommendedWines.add(line.replaceAll("[0-9.]", "").trim());
+           // Check if empty
+            if (line != "" && line != " ") {
+                recommendedWines.add(line.replaceAll("[0-9.]", "").trim());
+            }
         }
 
         return recommendedWines;
