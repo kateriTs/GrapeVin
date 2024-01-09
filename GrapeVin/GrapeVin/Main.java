@@ -11,7 +11,24 @@ import gf.SQLConnection;
 public class Main {
 
     public static void main(String[] args) throws Exception {  
-        System.out.println("Español");     
+        // Get a database connection
+        Connection conn = SQLConnection.getConnection();
+        // Make Login or Signup
+        Scanner sc = new Scanner(System.in);
+        String username = null;
+        String password = null;
+        System.out.println("Welcome to Gen5 wine somellier!");
+        System.out.println("Do you have an account? Yes or No?");
+        String yesNo = sc.nextLine();
+        User user = new User();
+        //Login
+        if (yesNo.toLowerCase().contains("yes")) {
+            login(username, password, conn, sc, user);
+        //Signup
+        } else if (yesNo.toLowerCase().contains("no")) {
+            signUp(username, password, conn, sc, user);
+        }
+        System.out.println(user.getUsername());    
         Questionnaire questionnaire = new Questionnaire();
         List<String> userResponses = questionnaire.collectUserResponses();
         String request1 = "Find 5 wines that are: " + userResponses.get(1) + "and " + userResponses.get(3)
@@ -151,4 +168,44 @@ public class Main {
                 System.out.println("Wine " + owine[1] + " allready exists");
             }
         }
+    public static void login(String username, String password, Connection conn, Scanner sc, User user) throws SQLException {
+        boolean passExist = true;
+        boolean userExist = true;
+        do {
+            System.out.println("Enter username:");
+            username = sc.nextLine();
+            userExist = valueExists(conn, "users", username, "username");
+            System.out.println("Enter password:");
+            password = sc.nextLine();
+            passExist = valueExists(conn, "users", password, "user_password");
+            if (!passExist || !userExist) {
+                System.out.println("Invalid Username or Password, try again.");
+            }
+            if (password.contains("exit") ) {
+                break;
+            }
+        } while(!passExist || !userExist);
+        user.setUsername(username);
+        user.setPassword(password);
     }
+
+    public static void signUp(String username, String password, Connection conn, Scanner sc, User user) throws SQLException{
+        username = null;
+       do {
+           System.out.println("Create username:");
+           username = sc.nextLine();
+           if (valueExists(conn, "users", username, "username")) {
+               System.out.println("Username already exists please try again");
+           }
+           if (username.contains("exit")) {
+               break;
+           }
+       } while (valueExists(conn, "users", username, "username"));
+           System.out.println("Create password:");
+           password = sc.nextLine();
+           user.setUsername(username);
+           user.setPassword(password);
+           user.addUser(conn);
+    }
+}
+
